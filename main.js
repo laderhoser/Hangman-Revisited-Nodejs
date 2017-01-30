@@ -188,7 +188,7 @@ function startGame() {
                 console.log("|       (_)  ")
                 console.log("|       /\|\\  ")
                 console.log("|        |   ");
-                console.log("|       / \  ");
+                console.log("|       / \\\ ");
                 console.log("|            ");
                 console.log("|_______.    ");
 
