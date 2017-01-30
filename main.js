@@ -7,7 +7,7 @@ guessCount = 9;
 
 
 console.log(figlet.textSync('HANG\nMAN\nGAME', {
-    font: 'digital',
+    font: 'isometric3',
     horizontalLayout: 'default',
     verticalLayout: 'default'
 }));
@@ -45,7 +45,7 @@ console.log("Guess the Name of the Student")
 console.log("You have 9 attempts")
 
 function startGame() {
-	if (blanksAndSucceses != filledArrayToMatch) {
+	
         inquire = inquirer.prompt([{
 
                 type: "input",
@@ -63,8 +63,8 @@ function startGame() {
             if (blanksAndSucceses.toString() == filledArrayToMatch.toString() && guessCount > 0){
                
 
-					console.log(figlet.textSync('YOU\nWON!', {
-    							font: 'digital',
+					console.log(figlet.textSync('YOU\nWIN!', {
+    							font: 'doom',
     							horizontalLayout: 'default',
     							verticalLayout: 'default'
 								}));
@@ -75,30 +75,14 @@ function startGame() {
 				console.log("**************************")
            
 				console.log(figlet.textSync('GAME\nOVER', {
-    						font: 'digital',
+    						font: 'doom',
     						horizontalLayout: 'default',
     						verticalLayout: 'default'
 							}));
-                
-
-            } else startGame();
-
-
-
-
-
-        })
-
-
-
-    }
-
+                } else startGame();
+	})
 
 }
-
-
-
-
 startGame();
 
 
