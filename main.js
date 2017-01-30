@@ -37,13 +37,21 @@ for (i = 0; i < filledArrayToMatch.length; i++) {
 
 var newWord = new Word(randomChoice, blanksAndSucceses, filledArrayToMatch);
 
+
+                console.log(" _________   ")
+                console.log("|/           ")
+                console.log("|            ")
+                console.log("|            ")
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|_______.    ");
 console.log("********************************")
 console.log(blanksAndSucceses)
 console.log("********************************")
 console.log("Welcome to Jose's Node-App Hangman")
 console.log("Guess the Name of the Student")
 console.log("You have 9 attempts")
-
 function startGame() {
 	
         inquire = inquirer.prompt([{
@@ -60,16 +68,19 @@ function startGame() {
             console.log(blanksAndSucceses);
            
 
-            if (blanksAndSucceses.toString() == filledArrayToMatch.toString() && guessCount > 0){
+            if (blanksAndSucceses.toString() == filledArrayToMatch.toString() && guessCount > 0|| blanksAndSucceses.toString() == filledArrayToMatch.toString()){
                
 
-					console.log(figlet.textSync('YOU\nWIN!', {
-    							font: 'doom',
+					         console.log(figlet.textSync('YOU\nWIN!', {
+    							                          font: 'doom',
     							horizontalLayout: 'default',
     							verticalLayout: 'default'
 								}));
        
-            } else if (guessCount < 1){
+            } 
+
+            else if (guessCount < 1){
+
             	console.log("**************************") 
             	console.log("The word was: " + randomChoice)
 				console.log("**************************")
@@ -79,7 +90,130 @@ function startGame() {
     						horizontalLayout: 'default',
     						verticalLayout: 'default'
 							}));
-                } else startGame();
+                }
+            else if (guessCount === 8) {
+              
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|            ")
+                console.log("|            ")
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|_______.    ");
+                startGame();
+            } else if (guessCount === 7) {
+               
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|       (_)  ")
+                console.log("|            ")
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|_______.    ");
+                startGame();
+            } else if (guessCount === 6) {
+              
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|       (_)  ")
+                console.log("|        |   ")
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|_______.    ");
+               startGame();
+            } else  if (guessCount === 5) {
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|       (_)  ")
+                console.log("|       /\|   ")
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|_______.    ");
+                 startGame();
+            }
+
+           
+         
+           
+            else if (guessCount === 4) {
+                
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|       (_)  ")
+                console.log("|       /\|\\  ")
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|_______.    ");
+                 startGame();
+            }
+          else if (guessCount === 3) {
+            
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|       (_)  ")
+                console.log("|       /\|\\  ")
+                console.log("|        |   ");
+                console.log("|            ");
+                console.log("|            ");
+                console.log("|_______.    ");
+                startGame();
+
+            } 
+          
+               else if (guessCount === 2) {
+              
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|       (_)  ")
+                console.log("|       /\|\\  ")
+                console.log("|        |   ");
+                console.log("|       /    ");
+                console.log("|            ");
+                console.log("|_______.    ");
+
+                 startGame();
+
+
+
+            }
+            else if (guessCount === 1) {
+               
+                console.log(" _________   ")
+                console.log("|/       |   ")
+                console.log("|       (_)  ")
+                console.log("|       /\|\\  ")
+                console.log("|        |   ");
+                console.log("|       / \  ");
+                console.log("|            ");
+                console.log("|_______.    ");
+
+
+                 startGame();
+
+
+
+            } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                else startGame();
 	})
 
 }
