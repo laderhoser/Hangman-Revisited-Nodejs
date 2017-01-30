@@ -7,7 +7,7 @@ guessCount = 9;
 
 
 console.log(figlet.textSync('HANG\nMAN\nGAME', {
-    font: 'isometric3',
+    font: 'isometric2',
     horizontalLayout: 'default',
     verticalLayout: 'default'
 }));
