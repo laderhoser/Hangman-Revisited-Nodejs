@@ -7,13 +7,13 @@ function Letter(letter, blanksAndSucceses, filledArrayToMatch) {
 	this.blanksAndSucceses = blanksAndSucceses;
 	this.numBlanks = filledArrayToMatch.length;
 	
-    this.validate = function(letter, guessCount) {
-    	this.guessCount = guessCount;
+    this.validate = function(letter) {
+    	
 
         for (var i = 0; i < this.numBlanks; i++) {
             if (this.filledArrayToMatch[i] == letter) {
             this.blanksAndSucceses[i] = letter;
-            guessCount ++;
+            
 			} 
    		 } ;
  	}

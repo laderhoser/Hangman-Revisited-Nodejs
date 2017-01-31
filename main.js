@@ -3,7 +3,7 @@ var Game = require('./game.js');
 var Letter = require('./letter.js');
 var Word = require('./word.js');
 var figlet = require('figlet');
-guessCount = 9;
+
 
 
 console.log(figlet.textSync('HANG\nMAN\nGAME', {
@@ -37,6 +37,9 @@ for (i = 0; i < filledArrayToMatch.length; i++) {
 
 var newWord = new Word(randomChoice, blanksAndSucceses, filledArrayToMatch);
 
+console.log("********************************")
+console.log("Welcome to Jose's Node-App Hangman")
+console.log("********************************")
 
                 console.log(" _________   ")
                 console.log("|/           ")
@@ -49,9 +52,9 @@ var newWord = new Word(randomChoice, blanksAndSucceses, filledArrayToMatch);
 console.log("********************************")
 console.log(blanksAndSucceses)
 console.log("********************************")
-console.log("Welcome to Jose's Node-App Hangman")
-console.log("Guess the Name of the Student")
-console.log("You have 9 attempts")
+console.log("Fill the blanks spaces above by")
+console.log("guessing the Name of the student")
+console.log("You have 9 attempts....Goodluck!")
 function startGame() {
 	
         inquire = inquirer.prompt([{
@@ -62,13 +65,15 @@ function startGame() {
 
     }]).then(function(answers) {
             letter = answers.letter.toLowerCase();
+            
             newWord.validate(letter);
-            guessCount--;
-            console.log("you have " + guessCount + " guesses left")
+
+            // guessCount--;
+            console.log("You have " + newWord.guessCount + " guesses left")
             console.log(blanksAndSucceses);
            
 
-            if (blanksAndSucceses.toString() == filledArrayToMatch.toString() && guessCount > 0|| blanksAndSucceses.toString() == filledArrayToMatch.toString()){
+            if (blanksAndSucceses.toString() == filledArrayToMatch.toString() && newWord.guessCount > 0|| blanksAndSucceses.toString() == filledArrayToMatch.toString()){
                
 
 					         console.log(figlet.textSync('YOU\nWIN!', {
@@ -79,7 +84,7 @@ function startGame() {
        
             } 
 
-            else if (guessCount < 1){
+            else if (newWord.guessCount < 1){
 
             	console.log("**************************") 
             	console.log("The word was: " + randomChoice)
@@ -91,7 +96,8 @@ function startGame() {
     						verticalLayout: 'default'
 							}));
                 }
-            else if (guessCount === 8) {
+            else if (newWord.guessCount === 8) {
+                // console.log("wrong choices: " + newWord.wrongGuesses)
               
                 console.log(" _________   ")
                 console.log("|/       |   ")
@@ -102,7 +108,7 @@ function startGame() {
                 console.log("|            ");
                 console.log("|_______.    ");
                 startGame();
-            } else if (guessCount === 7) {
+            } else if (newWord.guessCount === 7) {
                
                 console.log(" _________   ")
                 console.log("|/       |   ")
@@ -113,7 +119,7 @@ function startGame() {
                 console.log("|            ");
                 console.log("|_______.    ");
                 startGame();
-            } else if (guessCount === 6) {
+            } else if (newWord.guessCount === 6) {
               
                 console.log(" _________   ")
                 console.log("|/       |   ")
@@ -124,7 +130,7 @@ function startGame() {
                 console.log("|            ");
                 console.log("|_______.    ");
                startGame();
-            } else  if (guessCount === 5) {
+            } else  if (newWord.guessCount === 5) {
                 console.log(" _________   ")
                 console.log("|/       |   ")
                 console.log("|       (_)  ")
@@ -139,7 +145,7 @@ function startGame() {
            
          
            
-            else if (guessCount === 4) {
+            else if (newWord.guessCount === 4) {
                 
                 console.log(" _________   ")
                 console.log("|/       |   ")
@@ -151,7 +157,7 @@ function startGame() {
                 console.log("|_______.    ");
                  startGame();
             }
-          else if (guessCount === 3) {
+          else if (newWord.guessCount === 3) {
             
                 console.log(" _________   ")
                 console.log("|/       |   ")
@@ -165,7 +171,7 @@ function startGame() {
 
             } 
           
-               else if (guessCount === 2) {
+               else if (newWord.guessCount === 2) {
               
                 console.log(" _________   ")
                 console.log("|/       |   ")
@@ -181,7 +187,7 @@ function startGame() {
 
 
             }
-            else if (guessCount === 1) {
+            else if (newWord.guessCount === 1) {
                
                 console.log(" _________   ")
                 console.log("|/       |   ")
